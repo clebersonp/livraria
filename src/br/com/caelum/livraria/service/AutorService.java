@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import br.com.caelum.livraria.dao.AutorDao;
+import br.com.caelum.livraria.exception.LivrariaException;
 import br.com.caelum.livraria.modelo.Autor;
 
 @Stateless
@@ -20,6 +21,8 @@ public class AutorService {
 		// criada uma transação aqui, antes mesmo de chegar até o dao, quem se encarrega de criar a transação é o EJB Container
 		// e as configurações do banco no servidor.
 		dao.salva(autor);
+		
+		throw new LivrariaException("[ERRO] Erro ao salvar o Autor: " + autor.getNome());
 	}
 	
 	public List<Autor> todosAutores () {

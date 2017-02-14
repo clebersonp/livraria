@@ -22,7 +22,7 @@ public class AutorService {
 		// e as configurações do banco no servidor.
 		dao.salva(autor);
 		
-		throw new LivrariaException("[ERRO] Erro ao salvar o Autor: " + autor.getNome());
+//		throw new LivrariaException("[ERRO] Erro ao salvar o Autor: " + autor.getNome());
 	}
 	
 	public List<Autor> todosAutores () {
